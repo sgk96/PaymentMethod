@@ -15,9 +15,9 @@ class PaymentController extends Controller
        
         $payments= new payment;
         $data=$response['data'];
-        
+        $tdata=$response['data']['transactionData'];
         $payments->amount=$data['amount'];
-//      $payments->Date=date('Y-m-d',strtotime($data['date']));
+      $payments->Date=date('Y-m-d',strtotime($tdata['date']));
         $payments->paymentStatus=$data['paymentStatus'];  
         $payments->authCode=$data['authCode'];
        
@@ -27,7 +27,7 @@ class PaymentController extends Controller
      public function show()
     {
         $payments = payment::all();
-       return view('list')->with('payments',$payments);
+       return view('home')->with('payments',$payments);
     }
     }
 

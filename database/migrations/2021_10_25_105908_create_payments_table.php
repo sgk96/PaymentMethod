@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
            
             $table->integer('amount')->nullable();
             $table->string('authCode')->nullable();
-//            $table->date('Date')->nullable();
+            $table->date('Date')->nullable();
             $table->string('paymentStatus')->nullable();
            
             

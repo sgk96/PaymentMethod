@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/submit', [App\Http\Controllers\PaymentController::class, 'save'])->name('submit');
-Route::get('/list', [App\Http\Controllers\PaymentController::class, 'show'])->name('list');
+Route::get('/home', [App\Http\Controllers\PaymentController::class, 'show'])->name('list');

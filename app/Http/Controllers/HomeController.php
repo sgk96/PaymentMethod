@@ -25,31 +25,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function save()
-    {
-        <?php
- 
-require_once("./lib/Simplify.php");
- 
-Simplify::$publicKey = 'YOUR_PUBLIC_API_KEY';
-Simplify::$privateKey = 'YOUR_PRIVATE_API_KEY';
- 
-$payment = Simplify_Payment::createPayment(array(
-        'amount' => '1000',
-        'description' => 'payment description',
-        'invoice' => '[INVOICE ID]',
-        'card' => array(
-           'number' => '5555555555554444',
-           'expMonth' => '8',
-           'cvc' => '123',
-           'expYear' => '99'
-        )
-));
- 
-if ($payment->paymentStatus == 'APPROVED') {
-    echo "Payment approved\n";
-}
- 
-?>
-    }
+    
 }
