@@ -1,38 +1,16 @@
- var minDate, maxDate;
- 
-// Custom filtering function which will search data in column four between two values
-$.fn.dataTable.ext.search.push(
-    function( settings, data, dataIndex ) {
-        var min = minDate.val();
-        var max = maxDate.val();
-        var date = new Date( data[4] );
- 
-        if (
-            ( min === null && max === null ) ||
-            ( min === null && date <= max ) ||
-            ( min <= date   && max === null ) ||
-            ( min <= date   && date <= max )
-        ) {
-            return true;
-        }
-        return false;
-    }
-);
- 
-$(document).ready(function() {
-    // Create date inputs
-    minDate = new DateTime($('#min'), {
-        format: 'MMMM Do YYYY'
+  $(document).ready(function() {
+    var tbl1= jQuery('#tbl1').DataTable();
+
+        jQuery( "#from" ).datepicker();
+        jQuery( "#to" ).datepicker();
+        
+        jQuery('.srchDate').on('click',function() {
+           
+            var frm = jQuery('#from').val();
+            var to = jQuery('#to').val();
+            console.log(frm);
+            console.log(to);
+            tbl1.column(4).search(frm+'-'+to).draw();
+                 
+    } );
     });
-    maxDate = new DateTime($('#max'), {
-        format: 'MMMM Do YYYY'
-    });
- 
-    // DataTables initialisation
-    var table = $('#tbl1').DataTable();
- 
-    // Refilter the table
-    $('#min, #max').on('change', function () {
-        table.draw();
-    });
-});
