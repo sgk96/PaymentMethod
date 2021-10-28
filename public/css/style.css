@@ -1,0 +1,62 @@
+
+        .register-form{
+            padding-top: 5%;
+            padding-left: 35%;
+            padding-right: 1%;
+            padding-bottom: 4%;
+        }
+
+        .register-form input{
+            border-radius: 8px;
+        }
+        .col-md-3{
+            padding-top: 10%;
+            padding-right: 30%;
+          
+        }
+        .button{
+            border-color:black;
+        }
+        b{
+            color:darkgreen; 
+        }
+        .col-md-5{
+            padding-top: 10%;
+        }
+        .col-md-7{
+            padding-top: 10%;
+        }
+        p{
+          
+            font-size: 13px;
+        }
+        #p{
+            color:green;
+        }
+        .register-form button{
+       
+             background-color: white; 
+            color: black; 
+            border: 1px solid black;
+             border-radius: 8px;
+        }
+        #myself{
+            background-color: #88AB2D;
+            color:white;
+        }
+        #signup{
+            background-color: #344E18 ;
+            color:white;
+        }
+      
+        center{
+            color:green;
+        }
+        img{
+            opacity:0.7;
+        }
+        #login{
+            background-color: darkgreen;
+            color:white;
+        }
+ 

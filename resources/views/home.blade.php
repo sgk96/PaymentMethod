@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     <link href="https://simplify.cannvalate.com.au/public/assets/css/main.css" rel="stylesheet">
    
+   
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -158,7 +159,14 @@
                             <div class="position-relative form-group"><label for="exampleEmail33" class="sr-only">To</label><input name="to" id="to" placeholder="To Date" type="text" class="mr-2 form-control"></div>
                             
                             <button type="button" class="btn btn-primary srchDate">Search</button>
+                            <br><br>
+                            <select name="select">
+                                <option value="Declined">Declined</option>
+                                <option value="Approved">Approved</option>
+                            </select>
+                            <button type="button" name="button">Filter</button>
                         </form><br>
+                        
                             
                            
                    
@@ -214,5 +222,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://simplify.cannvalate.com.au/public/assets/js/main.js"></script>
+      
+     
     <script src="{{url('js/payment.js')}}"></script>
 </html>    

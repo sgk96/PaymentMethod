@@ -1,16 +1,26 @@
-  $(document).ready(function() {
-    var tbl1= jQuery('#tbl1').DataTable();
+  $(document).ready(function(){
+       $('#from').datepicker();
+         $('#to').datepicker();
+        $.fn.dataTable.ext.search.push(
+        function (settings, data, dataIndex) {
+            var min = $('#from').datepicker("getDate");
+            var max = $('#to').datepicker("getDate");
+            var startDate = new Date(data[4]);
+            if (min == null && max == null) { return true; }
+            if (min == null && startDate <= max) { return true;}
+            if(max == null && startDate >= min) {return true;}
+            if (startDate <= max && startDate >= min) { return true; }
+            return false;
+        }
+        );
 
-        jQuery( "#from" ).datepicker();
-        jQuery( "#to" ).datepicker();
-        
-        jQuery('.srchDate').on('click',function() {
-           
-            var frm = jQuery('#from').val();
-            var to = jQuery('#to').val();
-            console.log(frm);
-            console.log(to);
-            tbl1.column(4).search(frm+'-'+to).draw();
-                 
-    } );
-    });
+       
+            $("#from").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            $("#to").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            var table = $('#tbl1').DataTable();
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('.srchDate').on('click',function() {
+                table.draw();
+            });
+        });

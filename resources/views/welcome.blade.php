@@ -97,6 +97,10 @@
                                 console.log(data);
                             } 
                         });
+                         function apiPaymentErrorHandler() {
+        // re-enable the payment button, so the user can try again.
+        hostedPayments.enablePayBtn();
+        // TODO: Handle error
                    }
                 ).closeOnCompletion();
             </script>

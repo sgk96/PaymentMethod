@@ -25,5 +25,17 @@ class HomeController extends Controller
     {
         return view('datatable');
     }
+     public function index1()
+    {
+        return view('jsdemo');
+    }
+     public function register()
+    {
+        return view('registration1');
+    }
+    public function login()
+    {
+        return view('login');
+    }
     
 }

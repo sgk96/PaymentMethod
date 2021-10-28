@@ -1,17 +1,11 @@
 <html>
     <head>
-        <title>data table</title>
+        <title>datatable</title>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css">
+        
     </head>
-<body>
- <form class="form-inline">
-                            <div class="position-relative form-group"><label for="exampleEmail33" class="sr-only">From</label><input name="from" id="from" placeholder="From Date" type="text" class="mr-2 form-control"></div>
-                            <div class="position-relative form-group"><label for="exampleEmail33" class="sr-only">To</label><input name="to" id="to" placeholder="To Date" type="text" class="mr-2 form-control"></div>
-                            
-                            <button type="button" class="btn btn-primary srchDate">Search</button>
-                        </form><br>
-    <table id="example" class="display nowrap" style="width:100%">
+    <body>
+<table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
@@ -491,17 +485,35 @@
             </tr>
         </tfoot>
     </table>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
     <script>
-         jQuery( "#from" ).datepicker();
-        jQuery( "#to" ).datepicker();
-         jQuery('.srchDate').on('click',function() {
-            var frm = jQuery('#from').val();
-            var to = jQuery('#to').val();
-            logTbl.column(6).search(frm+'-'+to).draw();
-    </script>
-</body>
+        $(document).ready(function() {
+    $('#example').DataTable( {
+        initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    } );
+} );
+        </script>
+    </body>
+   
+        
 </html>
