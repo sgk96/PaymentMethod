@@ -29,13 +29,13 @@ class HomeController extends Controller
     {
         return view('jsdemo');
     }
-     public function register()
+     public function signup()
     {
-        return view('registration1');
+        return view('signup');
     }
-    public function login()
+    public function signin()
     {
-        return view('login');
+        return view('signin');
     }
     
 }

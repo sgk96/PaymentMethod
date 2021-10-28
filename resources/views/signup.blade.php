@@ -1,7 +1,6 @@
 
 <head>
     <title></title>
-    <meta name=”viewport” content=”width=device-width"  initial-scale="1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -13,9 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-        </head>
+</head>
 
 
 <body>
@@ -81,14 +78,14 @@
                                
 				  <div class="row">
                                     <div class="col-sm-12">
-                                        <a href="{{'/login'}}"><button type="button" id="signup" class="btn btn-success btn-block" id="signup">Sign Up</button></a>
+                                        <a href="{{'/signin'}}"><button type="button" id="signup" class="btn btn-success btn-block" id="signup">Sign Up</button></a>
                                     </div> 
                                 </div>
                                 <br><center>Already have an account</center><br>
                                
                                  <div class="row">
                                     <div class="col-sm-12">
-                                        <a href="/login"> <button type="button" class="btn btn-default btn-block" id="signin">Sign In </button></a>
+                                        <a href="/signin"> <button type="button" class="btn btn-default btn-block" id="signin">Sign In </button></a>
                                     </div> 
                                 </div>
 			</div>
