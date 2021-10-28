@@ -70,7 +70,7 @@
                                     <div class="col-sm-12">
                                         <p><input type="radio" name="radio1" id="radio" >&nbsp;&nbsp;I aggree to the portal <b>Terms and Condition</b> and <b>Privacy Policy</b></p>
                                     </div>
-                                </div><br>
+                                </div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                        <p> <input type="radio" name="radio1" id="radio" >&nbsp;&nbsp;I agree I have Valid Prescription and TGA approval for an LPG product<br>
@@ -78,7 +78,7 @@
                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our team on 1300 118 840 or <b>info@littlegreenpharma.com</b></p>
                                     </div>
                                 </div>
-                                <br>
+                               
 				  <div class="row">
                                     <div class="col-sm-12">
                                         <a href="{{'/login'}}"><button type="button" id="signup" class="btn btn-success btn-block" id="signup">Sign Up</button></a>
