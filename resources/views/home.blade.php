@@ -5,19 +5,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Commbank - CVL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="csrf-token" content="BwvMaz9" />
-    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     <link href="https://simplify.cannvalate.com.au/public/assets/css/main.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://code.jquery.com/jquery-3.5.1.js" rel="stylesheet">
+   
+   
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -153,12 +153,23 @@
                <div class="row">
                 <div class="col-md-12 col-xl-12">
                     <div class="main-card mb-3 card" style="padding: 8px;">
-              <form action="#" method="POST">
-                  <label>minimum date</label>
-                 <input type="text" id="min" name="min">
-                 <label>maximum date</label>
-                 <input type="text" id="max" name="max">
-              </form>
+              
+                      <form class="form-inline">
+                            <div class="position-relative form-group"><label for="exampleEmail33" class="sr-only">From</label><input name="from" id="from" placeholder="From Date" type="text" class="mr-2 form-control"></div>
+                            <div class="position-relative form-group"><label for="exampleEmail33" class="sr-only">To</label><input name="to" id="to" placeholder="To Date" type="text" class="mr-2 form-control"></div>
+                            
+                            <button type="button" class="btn btn-primary srchDate">Search</button>
+                            <br><br>
+                            <select name="select">
+                                <option value="Declined">Declined</option>
+                                <option value="Approved">Approved</option>
+                            </select>
+                            <button type="button" name="button">Filter</button>
+                        </form><br>
+                        
+                            
+                           
+                   
                      <table class="table table-bordered display nowrap" id="tbl1" style="width:100%">
                             <thead>
                                 <tr>
@@ -177,7 +188,7 @@
                                      <td>{{$row->amount}}</td>
                                      <td>{{$row->authCode}}</td>
                                      <td>{{$row->paymentStatus}}</td>
-                                      <td>{{$row->Date}}</td>
+                                     <td>{{date('m/d/Y',strtotime($row->Date))}}</td>
 
                                 </tr>
                                @endforeach
@@ -185,7 +196,7 @@
                         </table>
                     </div>
                 </div>
-                        </div>         
+               </div>         
            
         </div>
         <div class="app-wrapper-footer">
@@ -203,54 +214,15 @@
                 <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://simplify.cannvalate.com.au/public/assets/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-        <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
-     <script src="{{url('js/payment.js')}}"></script>
-     <script>
-         var minDate, maxDate;
-
-$.fn.dataTable.ext.search.push(
-    function( settings, data, dataIndex ) {
-        var min = minDate.val();
-        var max = maxDate.val();
-        var date = new Date( data[4] );
- 
-        if (
-            ( min === null && max === null ) ||
-            ( min === null && date <= max ) ||
-            ( min <= date   && max === null ) ||
-            ( min <= date   && date <= max )
-        ) {
-            return true;
-        }
-        return false;
-    }
-);
- 
-$(document).ready(function() {
-    // Create date inputs
-    minDate = new DateTime($('#min'), {
-        format: 'MMMM Do YYYY'
-    });
-    maxDate = new DateTime($('#max'), {
-        format: 'MMMM Do YYYY'
-    });
- 
-    // DataTables initialisation
-    var table = $('#tbl1').DataTable();
- 
-    // Refilter the table
-    $('#min, #max').on('change', function () {
-        table.draw();
-    });
-});
-         </script>
-   
     </body>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://simplify.cannvalate.com.au/public/assets/js/main.js"></script>
+      
+     
+    <script src="{{url('js/payment.js')}}"></script>
 </html>    

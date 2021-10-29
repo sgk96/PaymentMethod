@@ -12,9 +12,7 @@
    
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="csrf-token" content="{{csrf_token()}}" />
-    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+
     <link href="https://simplify.cannvalate.com.au/public/assets/css/main.css" rel="stylesheet">
 
   
@@ -57,12 +55,7 @@
                         <div class="row">
                 <div class="col-md-12 col-xl-12">
                     <div class="main-card mb-3 card" style="padding: 8px;">
-                         <div>                 
-<label for="from">From</label>
-<input type="text" id="from" name="from">
-<label for="to">to</label>
-<input type="text" id="to" name="to">
-       </div>
+              
                      <table class="table table-bordered display nowrap" id="tbl1" style="width:100%">
                             <thead>
                                 <tr>
@@ -106,42 +99,7 @@
        
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-          <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-       <script src="{{url('js/payment.js')}}"></script>
-        <script>
-  $( function() {
-    var dateFormat = "mm/dd/yy",
-      from = $( "#from" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 3
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
-      return date;
-    }
-  } );
-  </script>
+
+       
         </body>
 </html>    

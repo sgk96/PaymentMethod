@@ -23,7 +23,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('datatable');
+    }
+     public function index1()
+    {
+        return view('jsdemo');
+    }
+     public function signup()
+    {
+        return view('signup');
+    }
+    public function signin()
+    {
+        return view('signin');
+    }
+    
+    public function bootview()
+    {
+        return view('bootstrap');
     }
     
 }
