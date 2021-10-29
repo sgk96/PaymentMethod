@@ -21,28 +21,27 @@
 
 
 <body>
-<div class="container register">
+<div class="container login">
 	<div class="row">
-		<div class="col-md-5">
-			<div class="register-info">
+		<div class="col-lg-4">
+			<div class="login-info">
                             <img src="/images/green_little.jpg" alt="image" height="500" width="600"/>
 				
 			</div>
 		</div>
             
-		<div class="col-md-7" >
+		<div class="col-md-8" >
+                    <div class="login-form">
                     <form id="#" action="#" method="GET">
                                     @csrf
 			<div class="register-form">
-                            <h2>Login</h2>
-                               
-                            <br>
+                            <h2>Login</h2><br>
 				
-                                <div class="row">
+                               <div class="row">
                                     <div class="col-sm-12">
-                                         <input type="text" class="form-control" id="email_2" placeholder="Ypur Email Address" name="email_2">
+                                         <input type="text" class="form-control" id="email_2" placeholder="Your Email Address" name="email_2">
                                     </div> 
-                                </div>
+                               </div>
                                 <br>
                                <div class="row">
                                     <div class="col-sm-12">
@@ -50,28 +49,24 @@
                                     </div> 
                                 </div>
                                 <br>
-                                  <div class="row">
+                                <div class="row">
                                     <div class="col-sm-6">
-                                        <p><input type='radio' name='remember_me'>&nbsp;&nbsp;Remember Me</p>
+                                        
+                                        <p><label class="radio-inline"><input type='radio' name='remember_me'>
+                                            Remember Me</label></p>
                                     </div> 
-                                         <div class="col-sm-6">
-                                             <a href=""> <p id="p">Lost Your Password?</p></a>
+                                         <div class="col-sm-6" >
+                                             <a href=""> <p id="p" class="text-right" >Lost Your Password?</p></a>
                                     </div> 
-<!--                                      <div class="col-sm-6">
-                                          <p>Lost Your password?</p>
-                                    </div> -->
                                 </div>
-                             
-                                
                                 <br>
-				  <div class="row">
+			        <div class="row">
                                     <div class="col-sm-12">
                                         <a href="{{'#'}}"><button type="button" class="btn btn-success btn-block" id="login">Login</button></a>
                                     </div> 
                                 </div>
                                 <br><center>Don't have an account</center><br>
-                               
-                                 <div class="row">
+                                <div class="row">
                                     <div class="col-sm-12">
                                         <a href="/signup"><button type="button" class="btn btn-default btn-block">Register Here</button></a>
                                     </div> 
@@ -80,6 +75,7 @@
                     </form>
                     </div>
 		</div>
+        </div>
 </div>
 </body>
 </html>

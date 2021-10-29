@@ -38,4 +38,9 @@ class HomeController extends Controller
         return view('signin');
     }
     
+    public function bootview()
+    {
+        return view('bootstrap');
+    }
+    
 }

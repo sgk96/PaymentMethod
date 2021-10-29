@@ -18,7 +18,8 @@
 <body>
 <div class="container register">
 	<div class="row">
-		<div class="col-md-3">
+            
+		<div class="col-lg-3">
 			<div class="register-info">
                             <img src="/images/green_little.jpg" alt="image" id="little" height="430" width="570"/>
 				
@@ -26,18 +27,22 @@
 		</div>
             
 		<div class="col-md-9" >
-                    
 			<div class="register-form">
+                            <form action="#" method="GET">
                             <h2>Register</h2>
                             <p>who are you ordering medication for?</p>
+                               <div class="radio-toolbar">
                                 <div class="row">
-				    <div class="col-sm-6">          
-                                        <button type="button" class="btn btn-default btn-block " id="myself">Myself</button>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-default btn-block">Someone Else</button>
-				    </div>
+                                        <div class="col-sm-6">
+                                   <input type="radio" id="radiomyself"  name="radiomyself" value="Myself" checked>
+                                   <label for="radiomyself">Myself</label>
+                                        </div>
+                                         <div class="col-sm-6">
+                                   <input type="radio" id="radiosomeone"  name="radiosomeone" value="Someone">
+                                   <label for="radiosomeone">Someone Else</label>
+                                         </div>
                                 </div>
+                               </div>
                             <br>
 				<div class="row">
 				    <div class="col-sm-6">          
@@ -65,14 +70,18 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p><input type="radio" name="radio1" id="radio" >&nbsp;&nbsp;I aggree to the portal <b>Terms and Condition</b> and <b>Privacy Policy</b></p>
+                                        <p><label class="radio-inline">
+                                            <input type="radio" name="radio1" id="radio" />&nbsp;&nbsp;I aggree to the portal <b>Terms and Condition</b> and <b>Privacy Policy</b>
+                                            </label></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                       <p> <input type="radio" name="radio1" id="radio" >&nbsp;&nbsp;I agree I have Valid Prescription and TGA approval for an LPG product<br>
-                                            &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you dont havescript or approval and would like assistance with this please contact<br>
-                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our team on 1300 118 840 or <b>info@littlegreenpharma.com</b></p>
+                                       <p> <label class="radio-inline">
+                                        <input type="radio" name="radio1" id="radio" >&nbsp;&nbsp;I agree I have Valid Prescription and TGA approval for an LPG product<br> </label></p>
+                                            <p>If you dont havescript or approval and would like assistance with this please 
+                                                contact our team on 1300 118 840 or <b>info@littlegreenpharma.com</b></p>
+                                       
                                     </div>
                                 </div>
                                
@@ -88,6 +97,7 @@
                                         <a href="/signin"> <button type="button" class="btn btn-default btn-block" id="signin">Sign In </button></a>
                                     </div> 
                                 </div>
+                            </form>
 			</div>
                     </div>
 		</div>
